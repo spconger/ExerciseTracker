@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Goals</h2>
+
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+        <th>Date Enterd</th>
+        <th>Goal</th>
+        <th>Evidence</th>
+        <th>Achieved Date</th>
+       
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for g in goals %}
+      
+               
+        <tr>
+            <td>{{ g.startdate }}</td>
+            <td>{{ g.goalname}}</td>
+            <td>{{ g.evidence }}</td>
+            <td>{{ g.achievedate }}</td>
+           
+
+        </tr>
+       
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

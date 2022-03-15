@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Last 15 Exercises</h2>
+<p>The totals represent the total reps and walking steps for a day. I consider anything 5000 and above to be meeting the goal.</p>
+<p>I have been working on implementing a rating system but have encountered problems. As a substitute I have made the days when I achieve my goal bold and green.</p>
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+        <th>Exercise Date</th>
+        <th>Total</th>
+       
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in sumTotals %}
+        {% if t.sum >= 5000 %}
+        <tr>
+            <td style="color:green;"><strong>{{ t.exercisedate }}<strong></td>
+            <td style="color:green;"><strong>{{ t.sum }}</strong></td>
+         </tr>  
+         {% else %}
+        
+        <tr>
+            <td>{{ t.exercisedate }}</td>
+            <td>{{ t.sum }}</td>
+           
+
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

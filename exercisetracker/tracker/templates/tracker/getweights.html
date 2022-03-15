@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Weights</h2>
+<p>Goal weight is 170 lbs</p>
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+        <th>Weight Date</th>
+        <th>Weight Amount</th>
+        <th>Difference</th>
+    </thead>
+    <tbody>
+        {% for w in list_weights %}
+        <tr>
+            <td>{{ w.weightdate }}</td>
+            <td>{{ w.weight }}</td>
+           <td>{{ w.dif }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

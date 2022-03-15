@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Calories and Goal</h2>
+<p>The daily calory goal is 2000</p>
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+        <th>Date</th>
+        <th>Calories</th>
+        <th>Difference from goal</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in cal_list %}
+        <tr>
+            <td>{{c.entrydate }}</td>
+            <td>{{ c.calories }}</td>
+            {% if c.difference <= 0 %}
+                <td style="color:green">{{ c.difference }}</td>
+            {% else %}
+            <td style="color:red">{{ c.difference }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

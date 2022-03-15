@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class='row'>
+    <div class='col-sm-7'>
+<h2>Exercise Tracker</h2>
+<img src={% static 'Screeslope.jpg' %} width='60%' height='60%'alt="hiking"/>
+    </div>
+    <div class='col-sm-5'>
+        
+            <h2>Record counts</h2>
+           <table class="table">
+               <thead>
+                   <tr>
+                   <th>Record Type</th>
+                   <th>Count</th>
+                   <tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td>Goals</td>
+                       <td>{{ goals }}</td>
+                   </tr>
+                   <tr>
+                    <td>Exercises</td>
+                    <td>{{ exercises }}</td>
+                </tr>
+                <tr>
+                    <td>Weights</td>
+                    <td>{{ weights }}</td>
+                </tr>
+                <tr>
+                    <td>Daily Exercises</td>
+                    <td>{{ daily }}</td>
+                </tr>
+                <tr>
+                    <td>Daily Calories</td>
+                    <td>{{ calory }}</td>
+                </tr>
+
+               </tbody>
+            
+              </table>
+    </div>
+    
+</div>
+
+<div class='row'>
+    <div class='col-sm-7'>
+        <p>&nbsp;</p>
+        <p>Crossing the Cascade Crest on the way to Steheken 2017.</p>
+    </div>
+  
+       
+    </div>
+</div>
+
+{% endblock %}
