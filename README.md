@@ -11,3 +11,6 @@ extra techniques and tools that are not explicitly covered in class: these inclu
 </ul>
 <p>The first commit included all the models, views, and templates. I hope to add more comments and to expand the tests to show a complete set of 
 unit tests.</p>
+<p>The next commit added some tests. More to come.</p>
+<p>The third commit added the wsgi file though I am not doing anything with it currently. It is important if one were to attach the django project to Apache and actually serve it to the world</p>
+<p>Added a view and links to the table that shows the number of records in each database table. The links go to the appropriate page to provide details on each of the data sets. </p>
