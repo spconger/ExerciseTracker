@@ -87,6 +87,10 @@ def getCaloryCounts(request):
         cal_list.append(c)
     return render (request, 'tracker/calories.html', {'cal_list' : cal_list})
 
+def getExercises(request):
+    exer = Exercise.objects.all()
+    return render(request, 'tracker/getexercises.html', {'exer': exer})
+
  
 #Forms
 def addExercise(request):

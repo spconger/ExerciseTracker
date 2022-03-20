@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Exercises</h2>
+
+<table class="table table-bordered table-striped table-condensed">
+    <thead>
+        <tr>
+        <th>Date Entered</th>
+        <th>Exercise</th>
+        <th>Measure</th>
+       
+       
+        
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in exer %}
+      
+               
+        <tr>
+            <td>{{ e.dateentered }}</td>
+            <td>{{ e.exercisename}}</td>
+            <td>{{ e.measure }}</td>
+    
+           
+
+        </tr>
+       
+        {% endfor %}
+    </tbody>
+
+</table>
+{% endblock %}

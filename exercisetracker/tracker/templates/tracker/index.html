@@ -18,23 +18,23 @@
                </thead>
                <tbody>
                    <tr>
-                       <td>Goals</td>
+                       <td><a href="{% url 'goals' %}">Goals</a></td>
                        <td>{{ goals }}</td>
                    </tr>
                    <tr>
-                    <td>Exercises</td>
+                    <td><a href="{% url 'exercises' %}">Exercises</a></td>
                     <td>{{ exercises }}</td>
                 </tr>
                 <tr>
-                    <td>Weights</td>
+                    <td><a href="{% url 'getweights' %}">Weights</a></td>
                     <td>{{ weights }}</td>
                 </tr>
                 <tr>
-                    <td>Daily Exercises</td>
+                    <td><a href="{% url 'etotals' %}" >Daily Exercise totals</a></td>
                     <td>{{ daily }}</td>
                 </tr>
                 <tr>
-                    <td>Daily Calories</td>
+                    <td><a href="{% url 'calories' %}">Daily Calories</a></td>
                     <td>{{ calory }}</td>
                 </tr>
 
