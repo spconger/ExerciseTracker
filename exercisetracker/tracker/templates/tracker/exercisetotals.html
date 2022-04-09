@@ -19,6 +19,12 @@
             <td style="color:green;"><strong>{{ t.exercisedate }}<strong></td>
             <td style="color:green;"><strong>{{ t.sum }}</strong></td>
          </tr>  
+         {% elif t.sum > 500 %}
+         <tr>
+            <td style="color:blue;"><strong>{{ t.exercisedate }}<strong></td>
+            <td style="color:blue;"><strong>{{ t.sum }}</strong></td>
+         </tr>
+
          {% else %}
         
         <tr>

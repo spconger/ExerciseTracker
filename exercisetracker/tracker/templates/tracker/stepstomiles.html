@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Steps to Miles</h2>
+<p>The goal for steps is about 5000 steps or two miles per day. Days that meet that goal are in green.</p>
 <table class="table table-bordered table-striped table-condensed">
     <thead>
         <tr>
         <th>Exercise Date</th>
         <th>Steps</th>
-        <th>Miless</th>
+        <th>Miles</th>
         
         </tr>
     </thead>
@@ -14,8 +15,13 @@
         {% for w in miles_list %}
         <tr>
             <td>{{ w.walkdate }}</td>
+            {% if w.steps >= 5000 %}
+            <td style="color:green">{{ w.steps}}</td>
+            <td style="color:green">{{ w.miles}}</td>
+            {% else %}
             <td>{{ w.steps}}</td>
             <td>{{ w.miles}}</td>
+            {% endif %}
 
         </tr>
         {% endfor %}
