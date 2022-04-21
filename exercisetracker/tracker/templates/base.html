@@ -29,8 +29,7 @@
                 <li><a href="{% url 'etotals' %}">Recent exercises</a></li>
                 <li><a href="{% url 'stepstomiles' %}">Steps to Miles</a></li>
                 <li><a href="{% url 'exercises' %}">Exercises</a></li>
-                <li><a href="{% url 'journal' %}">Journal Entry</a></li>
-                <li><a href="{% url 'recentries' %}">Recent Journal Entries</a></li>
+              
                 
               </ul>
             </li>
@@ -65,7 +64,14 @@
                 </ul>
  
               </li>
-              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Journal
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'journal' %}">Make journal entry</a></li>
+                  <li><a href="{% url 'recentries' %}">recent entries</a></li>
+                 
+                </ul>
             
             <li><a href="{% url 'about' %}">About</a></li>
           </ul>

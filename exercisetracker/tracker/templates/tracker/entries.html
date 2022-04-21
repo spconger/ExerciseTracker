@@ -10,7 +10,7 @@
         
 <h2>Journal Entries</h2>
 <hr/>
-<p>Recent journal entries</p>
+
 
         {% for e in entry %}
         <p><strong>Title:</strong>  {{ e.entrytitle }}</p>
@@ -19,8 +19,9 @@
          <p><strong>Goal</strong> {{ g }}</p>
         {% endfor %}
        <p><strong>Body</strong> {{ e.entrytext }}</p>
-        
+       <hr/> 
         {% endfor %}
+
    </div>
 </div>
 
