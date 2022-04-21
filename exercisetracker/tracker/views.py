@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Sum, Count
-from .models import Goal, Exercise, Weight, DailyExercise, Miles, WeightDifference, DailyGoal, CaloryCount, CaloryGoal
-from .forms import ExerciseForm, WeightForm, NewExerciseForm, NewGoalForm, AddCalories
+from .models import Goal, Exercise, Weight, DailyExercise, Miles, WeightDifference, DailyGoal, CaloryCount, CaloryGoal, Journal
+from .forms import ExerciseForm, WeightForm, NewExerciseForm, NewGoalForm, AddCalories, ExcerciseJournal
 
 # Create your views here.
 def index(request):
@@ -11,6 +11,7 @@ def index(request):
     weights=Weight.objects.all().count()
     calory=CaloryCount.objects.all().count()
     daily=DailyExercise.objects.all().count()
+    entries=Journal.objects.all().count
 
 
     #you can collect all the different elements into a context
@@ -21,6 +22,7 @@ def index(request):
         'weights' : weights,
         'calory' : calory,
         'daily' : daily,
+        'entries' : entries,
     }
     return render(request, 'tracker/index.html', context=context)
 
@@ -90,6 +92,11 @@ def getCaloryCounts(request):
 def getExercises(request):
     exer = Exercise.objects.all()
     return render(request, 'tracker/getexercises.html', {'exer': exer})
+
+def getLastJournalEntries(request):
+    entry=Journal.objects.all().order_by('-entrydate')[:15]
+    return render(request, 'tracker/entries.html', {'entry':entry})
+
 
  
 #Forms
@@ -163,5 +170,17 @@ def addCalories(request):
         form=AddCalories()
     return render(request, 'tracker/addcalories.html', {'form': form})
 
-   
+def journalEntry(request):
+    form=ExcerciseJournal
+
+    if request.method=='POST':
+        form=ExcerciseJournal(request.POST)
+        if form.is_valid():
+            
+            post=form.save(commit=True)
+            post.save()
+            form=ExcerciseJournal()
+    else:
+        form=ExcerciseJournal()
+    return render(request, 'tracker/journal.html', {'form': form})
     

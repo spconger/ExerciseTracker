@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class='row'>
+    <div class='col-sm-5'>
+        <img src={% static 'lake.jpg' %} width="95%" height="95%" alt="mountain lake">
+    </div>
+    <div class="col-sm-7">
+        
+<h2>Journal Entries</h2>
+<hr/>
+<p>Recent journal entries</p>
+
+        {% for e in entry %}
+        <p><strong>Title:</strong>  {{ e.entrytitle }}</p>
+        <p><strong>Date:</strong> {{ e.entrydate }}</p>
+        {% for g in e.goal.all %}        
+         <p><strong>Goal</strong> {{ g }}</p>
+        {% endfor %}
+       <p><strong>Body</strong> {{ e.entrytext }}</p>
+        
+        {% endfor %}
+   </div>
+</div>
+
+{% endblock %}

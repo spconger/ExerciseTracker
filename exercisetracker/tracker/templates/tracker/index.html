@@ -4,7 +4,7 @@
 <div class='row'>
     <div class='col-sm-7'>
 <h2>Exercise Tracker</h2>
-<img src={% static 'Screeslope.jpg' %} width='60%' height='60%'alt="hiking"/>
+<img src={% static 'Screeslope.jpg' %} width='75%' height='75%'alt="hiking"/>
     </div>
     <div class='col-sm-5'>
         
@@ -36,6 +36,10 @@
                 <tr>
                     <td><a href="{% url 'calories' %}">Daily Calories</a></td>
                     <td>{{ calory }}</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'journal' %}">Journal entries</a></td>
+                    <td>{{ entries }}</td>
                 </tr>
 
                </tbody>

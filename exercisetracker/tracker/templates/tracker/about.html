@@ -1,8 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>About</h2>
+{% load static %}
+
+<div class='row'>
+    <div class='col-sm-7'>
+<h2>Exercise Tracker</h2>
+<img src={% static 'switchback.jpg' %} width='100%' height='100%'alt="hiking"/>
+    </div>
+    <div class='col-sm-5'>
+        <h2>About</h2>
+        <hr/>
 <p>This site was developed to serve as a personal exercise and diet tacker. It tracks goals, exercises and walking.</p>
 <p>It also tracks weights and calories.</p>
 <p>The site was created in February 2022 using python Django and Visual Studio Code.</p>
-
+</div>
+</div>
 {% endblock %}

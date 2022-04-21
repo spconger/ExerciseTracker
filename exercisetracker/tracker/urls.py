@@ -15,4 +15,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('getGoals/', views.getGoals, name='goals'),
     path('getExercises/', views.getExercises, name='exercises'),
+    path('journalEntry/', views.journalEntry, name='journal'),
+    path('getLastJournalEntries/', views.getLastJournalEntries, name='recentries')
 ]

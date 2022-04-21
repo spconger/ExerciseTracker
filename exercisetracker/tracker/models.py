@@ -52,6 +52,18 @@ class CaloryCount(models.Model):
     class Meta: 
         db_table='calorycount'
 
+class Journal(models.Model):
+    entrytitle = models.CharField(max_length=255)
+    entrydate=models.DateField()
+    goal = models.ManyToManyField(Goal)
+    entrytext=models.TextField()
+
+    def __str__(self):
+        return self.entrytitle
+
+    class Meta:
+        db_table='journal'
+
 
 
 '''These are non-model classes. They are classes I use to do 

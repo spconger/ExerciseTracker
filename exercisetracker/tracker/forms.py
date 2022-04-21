@@ -1,6 +1,6 @@
 from socket import fromshare
 from django import forms
-from .models import DailyExercise, Weight, Exercise, Goal, CaloryCount
+from .models import DailyExercise, Weight, Exercise, Goal, CaloryCount, Journal
 
 class ExerciseForm(forms.ModelForm):
     class Meta:
@@ -25,4 +25,9 @@ class NewGoalForm(forms.ModelForm):
 class AddCalories(forms.ModelForm):
     class Meta:
         model=CaloryCount
+        fields='__all__'
+
+class ExcerciseJournal(forms.ModelForm):
+    class Meta:
+        model=Journal
         fields='__all__'
