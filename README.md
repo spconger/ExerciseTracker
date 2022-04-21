@@ -15,3 +15,4 @@ unit tests.</p>
 <p>The third commit added the wsgi file though I am not doing anything with it currently. It is important if one were to attach the django project to Apache and actually serve it to the world</p>
 <p>Added a view and links to the table on the index page that shows the number of records in each database table. The links go to the appropriate page to provide details on each of the data sets. </p>
 <p>Misc commit on 4-9-2022 uploaded a few changes to the html files, particularly stepstomiles.html where it added an if else structure.</p>
+<p>In the journal commit I added an exercise journal with a form for entry and page for viewing.</p>
