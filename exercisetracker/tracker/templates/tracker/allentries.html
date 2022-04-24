@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> All Journal Entries </h1>
+<p>Click on title to see complete entry.</p>
+<table class="table">
+    <head>
+        <tr>
+        <th>Date</th>
+        <th>title</th>
+        </tr>
+    </head>
+    <body>
+        {% for j in journ %}
+        <tr>
+            <td>{{ j.entrydate }}</td>
+            <td><a href="{% url 'selectedj' id=j.id %}">{{ j.entrytitle }}</a></td>
+        </tr>
+        {% endfor %}
+    </body>
+</table>
+{% endblock %}S

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Sum, Count
 from .models import Goal, Exercise, Weight, DailyExercise, Miles, WeightDifference, DailyGoal, CaloryCount, CaloryGoal, Journal
 from .forms import ExerciseForm, WeightForm, NewExerciseForm, NewGoalForm, AddCalories, ExcerciseJournal
@@ -94,8 +94,16 @@ def getExercises(request):
     return render(request, 'tracker/getexercises.html', {'exer': exer})
 
 def getLastJournalEntries(request):
-    entry=Journal.objects.all().order_by('-entrydate')[:15]
+    entry=Journal.objects.all().order_by('-entrydate')[:5]
     return render(request, 'tracker/entries.html', {'entry':entry})
+
+def getAllJournalEntries(request):
+    journ=Journal.objects.all().order_by('-entrydate')
+    return render(request, 'tracker/allentries.html', {'journ':journ})
+
+def getSelectedJournalEntry(request, id):
+    j=get_object_or_404(Journal, pk=id)
+    return render (request, 'tracker/selectedentry.html', {"j": j})
 
 
  
