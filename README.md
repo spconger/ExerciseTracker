@@ -16,3 +16,4 @@ unit tests.</p>
 <p>Added a view and links to the table on the index page that shows the number of records in each database table. The links go to the appropriate page to provide details on each of the data sets. </p>
 <p>Misc commit on 4-9-2022 uploaded a few changes to the html files, particularly stepstomiles.html where it added an if else structure.</p>
 <p>In the journal commit I added an exercise journal with a form for entry and page for viewing.</p>
+<p>For the expanded journals commit I limited the get journal entries to 5 entries but add a link to see all journal entries. All journal entries provides a table of all the journal entries by data and with title. Clicking on the title will return that complete journal entry. Additional note: I uploaded the pictures I am using but they are full sized. They really should be resized. If my site were actually online the pictures would take up unnecessary ram and resources. I may resize them in the near future.</p>
